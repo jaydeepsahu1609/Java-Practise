@@ -31,9 +31,9 @@ public class LearnQueue {
         PriorityQueue<Student> queue = new PriorityQueue<>(Comparator.comparingInt((Student s) -> s.getName().length()).reversed());
 
         queue.offer(new Student(16, "jaydeep"));
-        queue.offer(new Student(16, "satyam"));
-        queue.offer(new Student(12, "bharat"));
-        queue.offer(new Student(26, "vidhyansh"));
+        queue.offer(new Student(16, "harsh"));
+        queue.offer(new Student(12, "hemant"));
+        queue.offer(new Student(26, "manmeet"));
         queue.offer(new Student(15, "palak"));
 
         while (!queue.isEmpty()) {
