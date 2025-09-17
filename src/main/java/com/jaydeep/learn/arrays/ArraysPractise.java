@@ -56,14 +56,14 @@ public class ArraysPractise {
                 new Student(16, "Jaydeep"),
                 new Student(15, "Palak"),
                 new Student(15, "Harsh"),
-                new Student(15, "Hemant")
+                new Student(15, "Prabhav")
         };
         System.out.println(students);
         System.out.println(Arrays.toString(students));
 
         Student[][] multiStudent = new Student[][]{
                 {new Student(16, "Jaydeep"), new Student(15, "Palak")},
-                {new Student(26, "Harsh"), new Student(12, "Hemant")}
+                {new Student(26, "Harsh"), new Student(12, "Prabhav")}
         };
         System.out.println(Arrays.toString(multiStudent));
 

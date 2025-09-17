@@ -84,7 +84,7 @@ public class LearnStreams {
         // min(comparator)
         System.out.println("------- min(comparator) -------");
         strings.clear();
-        strings.addAll(Arrays.asList("jaydeep", "harsh", "hemant", "palak"));
+        strings.addAll(Arrays.asList("jaydeep", "harsh", "prabhav", "palak"));
         System.out.println(strings.stream().min((a, b) -> {
             if (a.length() == b.length())
                 return b.charAt(0) - a.charAt(0);

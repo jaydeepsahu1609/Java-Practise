@@ -32,7 +32,7 @@ public class LearnQueue {
 
         queue.offer(new Student(16, "jaydeep"));
         queue.offer(new Student(16, "harsh"));
-        queue.offer(new Student(12, "hemant"));
+        queue.offer(new Student(12, "prabhav"));
         queue.offer(new Student(26, "manmeet"));
         queue.offer(new Student(15, "palak"));
 
