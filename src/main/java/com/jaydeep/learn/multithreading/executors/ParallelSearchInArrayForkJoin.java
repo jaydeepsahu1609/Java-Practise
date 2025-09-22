@@ -1,6 +1,7 @@
 package com.jaydeep.learn.multithreading.executors;
 
 import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.RecursiveTask;
 import java.util.stream.IntStream;
 
@@ -9,8 +10,6 @@ import java.util.stream.IntStream;
  *
  */
 public class ParallelSearchInArrayForkJoin {
-    static public int counter = 0;
-
     private static final class MaxArrayTask extends RecursiveTask<Boolean> {
         final int[] arr;
         final int low;
@@ -26,8 +25,6 @@ public class ParallelSearchInArrayForkJoin {
 
         @Override
         protected Boolean compute() {
-            counter++;
-
             System.out.println("[" + Thread.currentThread().getName() + "] low: " + this.low + " high: " + high);
             if (high - low <= 5) {
                 for (int i = low; i < high; i++) {
@@ -64,12 +61,15 @@ public class ParallelSearchInArrayForkJoin {
         MaxArrayTask task2 = new MaxArrayTask(arr, 0, length, 49);
 
         ForkJoinPool pool = new ForkJoinPool(4);
+        ForkJoinTask<Boolean> f1 = pool.submit(task1);
+        ForkJoinTask<Boolean> f2 = pool.submit(task2);
 
-        boolean found = pool.invoke(task1);
-        System.out.println("Found 43: " + found + " in " + counter);
+        boolean found1 = f1.join();
+        System.out.println("Found 43: " + found1);
 
-        counter = 0;
-        found = pool.invoke(task2);
-        System.out.println("Found 49: " + found + " in " + counter);
+        boolean found2 = f2.join();
+        System.out.println("Found 49: " + found2);
+
+        pool.shutdown();
     }
 }
