@@ -12,7 +12,7 @@ import java.util.concurrent.ThreadFactory;
  * </ul>
  */
 public class CachedThreadPoolExecutor {
-    private static final class CounterThread extends Thread {
+    private static final class CounterThread implements Runnable {
         private final String name;
 
         CounterThread(String name) {

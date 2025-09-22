@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
 public class FixedSizeThreadPoolExecutor {
-    private static final class CounterThread extends Thread {
+    private static final class CounterThread implements Runnable {
         private final String name;
 
         CounterThread(String name) {
