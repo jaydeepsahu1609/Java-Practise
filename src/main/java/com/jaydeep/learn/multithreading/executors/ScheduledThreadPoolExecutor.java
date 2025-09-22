@@ -1,4 +1,4 @@
-package com.jaydeep.learn.multithreading;
+package com.jaydeep.learn.multithreading.executors;
 
 import java.time.LocalDateTime;
 import java.util.concurrent.Executors;
